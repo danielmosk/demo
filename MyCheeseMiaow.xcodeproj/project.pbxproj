@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B2464F941D6D76F000225518 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B2464F931D6D76F000225518 /* CardMatchingGame.m */; };
+		B26BE6E71D74402800BF87DD /* PlayingCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26BE6E61D74402800BF87DD /* PlayingCardGameViewController.m */; };
+		B26BE6ED1D746C8400BF87DD /* SetCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = B26BE6EC1D746C8400BF87DD /* SetCardDeck.m */; };
+		B26BE6F01D746DD200BF87DD /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = B26BE6EF1D746DD200BF87DD /* SetCard.m */; };
+		B290F60D1D7C437900263C3C /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B290F60C1D7C437900263C3C /* HistoryViewController.m */; };
+		B2BA0AC91D75C3F1008C4904 /* SetCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BA0AC81D75C3F1008C4904 /* SetCardGameViewController.m */; };
+		B2BA0ACC1D75C79E008C4904 /* SetMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BA0ACB1D75C79E008C4904 /* SetMatchingGame.m */; };
+		B2E5E7B01D6C32EB00B0A912 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5E7AF1D6C32EB00B0A912 /* main.m */; };
+		B2E5E7B31D6C32EB00B0A912 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5E7B21D6C32EB00B0A912 /* AppDelegate.m */; };
+		B2E5E7B61D6C32EB00B0A912 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5E7B51D6C32EB00B0A912 /* ViewController.m */; };
+		B2E5E7B91D6C32EB00B0A912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E5E7B71D6C32EB00B0A912 /* Main.storyboard */; };
+		B2E5E7BB1D6C32EB00B0A912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E5E7BA1D6C32EB00B0A912 /* Assets.xcassets */; };
+		B2E5E7BE1D6C32EB00B0A912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E5E7BC1D6C32EB00B0A912 /* LaunchScreen.storyboard */; };
+		B2E5E7C91D6C32EB00B0A912 /* MyCheeseMiaowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5E7C81D6C32EB00B0A912 /* MyCheeseMiaowTests.m */; };
+		B2E5E7D41D6C32EB00B0A912 /* MyCheeseMiaowUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5E7D31D6C32EB00B0A912 /* MyCheeseMiaowUITests.m */; };
+		B2E5E7E31D6C4AE900B0A912 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5E7E21D6C4AE900B0A912 /* Card.m */; };
+		B2E5E7E61D6C4C2A00B0A912 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5E7E51D6C4C2A00B0A912 /* PlayingCard.m */; };
+		B2E5E7E91D6C5B2A00B0A912 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5E7E81D6C5B2A00B0A912 /* PlayingCardDeck.m */; };
+		B2E5E7EC1D6C5CB200B0A912 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5E7EB1D6C5CB200B0A912 /* Deck.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2E5E7C51D6C32EB00B0A912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E5E7A31D6C32EB00B0A912 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2E5E7AA1D6C32EB00B0A912;
+			remoteInfo = MyCheeseMiaow;
+		};
+		B2E5E7D01D6C32EB00B0A912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2E5E7A31D6C32EB00B0A912 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2E5E7AA1D6C32EB00B0A912;
+			remoteInfo = MyCheeseMiaow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B2464F921D6D76F000225518 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
+		B2464F931D6D76F000225518 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
+		B26BE6E51D74402800BF87DD /* PlayingCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardGameViewController.h; path = ../PlayingCardGameViewController.h; sourceTree = "<group>"; };
+		B26BE6E61D74402800BF87DD /* PlayingCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardGameViewController.m; path = ../PlayingCardGameViewController.m; sourceTree = "<group>"; };
+		B26BE6EB1D746C8400BF87DD /* SetCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardDeck.h; sourceTree = "<group>"; };
+		B26BE6EC1D746C8400BF87DD /* SetCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardDeck.m; sourceTree = "<group>"; };
+		B26BE6EE1D746DD200BF87DD /* SetCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCard.h; sourceTree = "<group>"; };
+		B26BE6EF1D746DD200BF87DD /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCard.m; sourceTree = "<group>"; };
+		B290F60B1D7C437900263C3C /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		B290F60C1D7C437900263C3C /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		B2BA0AC71D75C3F1008C4904 /* SetCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardGameViewController.h; sourceTree = "<group>"; };
+		B2BA0AC81D75C3F1008C4904 /* SetCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardGameViewController.m; sourceTree = "<group>"; };
+		B2BA0ACA1D75C79E008C4904 /* SetMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetMatchingGame.h; sourceTree = "<group>"; };
+		B2BA0ACB1D75C79E008C4904 /* SetMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetMatchingGame.m; sourceTree = "<group>"; };
+		B2E5E7AB1D6C32EB00B0A912 /* MyCheeseMiaow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCheeseMiaow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2E5E7AF1D6C32EB00B0A912 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B2E5E7B11D6C32EB00B0A912 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B2E5E7B21D6C32EB00B0A912 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B2E5E7B41D6C32EB00B0A912 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B2E5E7B51D6C32EB00B0A912 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B2E5E7B81D6C32EB00B0A912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B2E5E7BA1D6C32EB00B0A912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B2E5E7BD1D6C32EB00B0A912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B2E5E7BF1D6C32EB00B0A912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E5E7C41D6C32EB00B0A912 /* MyCheeseMiaowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCheeseMiaowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2E5E7C81D6C32EB00B0A912 /* MyCheeseMiaowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCheeseMiaowTests.m; sourceTree = "<group>"; };
+		B2E5E7CA1D6C32EB00B0A912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E5E7CF1D6C32EB00B0A912 /* MyCheeseMiaowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCheeseMiaowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2E5E7D31D6C32EB00B0A912 /* MyCheeseMiaowUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCheeseMiaowUITests.m; sourceTree = "<group>"; };
+		B2E5E7D51D6C32EB00B0A912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E5E7E11D6C4AE900B0A912 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = ../Card.h; sourceTree = "<group>"; };
+		B2E5E7E21D6C4AE900B0A912 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = ../Card.m; sourceTree = "<group>"; };
+		B2E5E7E41D6C4C2A00B0A912 /* PlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCard.h; sourceTree = "<group>"; };
+		B2E5E7E51D6C4C2A00B0A912 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
+		B2E5E7E71D6C5B2A00B0A912 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
+		B2E5E7E81D6C5B2A00B0A912 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
+		B2E5E7EA1D6C5CB200B0A912 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		B2E5E7EB1D6C5CB200B0A912 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2E5E7A81D6C32EB00B0A912 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E5E7C11D6C32EB00B0A912 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E5E7CC1D6C32EB00B0A912 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B2E5E7A21D6C32EB00B0A912 = {
+			isa = PBXGroup;
+			children = (
+				B2E5E7AD1D6C32EB00B0A912 /* MyCheeseMiaow */,
+				B2E5E7C71D6C32EB00B0A912 /* MyCheeseMiaowTests */,
+				B2E5E7D21D6C32EB00B0A912 /* MyCheeseMiaowUITests */,
+				B2E5E7AC1D6C32EB00B0A912 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B2E5E7AC1D6C32EB00B0A912 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5E7AB1D6C32EB00B0A912 /* MyCheeseMiaow.app */,
+				B2E5E7C41D6C32EB00B0A912 /* MyCheeseMiaowTests.xctest */,
+				B2E5E7CF1D6C32EB00B0A912 /* MyCheeseMiaowUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2E5E7AD1D6C32EB00B0A912 /* MyCheeseMiaow */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5E7B71D6C32EB00B0A912 /* Main.storyboard */,
+				B2E5E7B41D6C32EB00B0A912 /* ViewController.h */,
+				B2E5E7B51D6C32EB00B0A912 /* ViewController.m */,
+				B26BE6E51D74402800BF87DD /* PlayingCardGameViewController.h */,
+				B26BE6E61D74402800BF87DD /* PlayingCardGameViewController.m */,
+				B2BA0AC71D75C3F1008C4904 /* SetCardGameViewController.h */,
+				B2BA0AC81D75C3F1008C4904 /* SetCardGameViewController.m */,
+				B290F60B1D7C437900263C3C /* HistoryViewController.h */,
+				B290F60C1D7C437900263C3C /* HistoryViewController.m */,
+				B2464F921D6D76F000225518 /* CardMatchingGame.h */,
+				B2464F931D6D76F000225518 /* CardMatchingGame.m */,
+				B2BA0ACA1D75C79E008C4904 /* SetMatchingGame.h */,
+				B2BA0ACB1D75C79E008C4904 /* SetMatchingGame.m */,
+				B2E5E7E11D6C4AE900B0A912 /* Card.h */,
+				B2E5E7E21D6C4AE900B0A912 /* Card.m */,
+				B2E5E7E41D6C4C2A00B0A912 /* PlayingCard.h */,
+				B2E5E7E51D6C4C2A00B0A912 /* PlayingCard.m */,
+				B26BE6EE1D746DD200BF87DD /* SetCard.h */,
+				B26BE6EF1D746DD200BF87DD /* SetCard.m */,
+				B2E5E7EA1D6C5CB200B0A912 /* Deck.h */,
+				B2E5E7EB1D6C5CB200B0A912 /* Deck.m */,
+				B2E5E7E71D6C5B2A00B0A912 /* PlayingCardDeck.h */,
+				B2E5E7E81D6C5B2A00B0A912 /* PlayingCardDeck.m */,
+				B26BE6EB1D746C8400BF87DD /* SetCardDeck.h */,
+				B26BE6EC1D746C8400BF87DD /* SetCardDeck.m */,
+				B2E5E7B11D6C32EB00B0A912 /* AppDelegate.h */,
+				B2E5E7B21D6C32EB00B0A912 /* AppDelegate.m */,
+				B2E5E7BA1D6C32EB00B0A912 /* Assets.xcassets */,
+				B2E5E7BC1D6C32EB00B0A912 /* LaunchScreen.storyboard */,
+				B2E5E7BF1D6C32EB00B0A912 /* Info.plist */,
+				B2E5E7AE1D6C32EB00B0A912 /* Supporting Files */,
+			);
+			path = MyCheeseMiaow;
+			sourceTree = "<group>";
+		};
+		B2E5E7AE1D6C32EB00B0A912 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5E7AF1D6C32EB00B0A912 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2E5E7C71D6C32EB00B0A912 /* MyCheeseMiaowTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5E7C81D6C32EB00B0A912 /* MyCheeseMiaowTests.m */,
+				B2E5E7CA1D6C32EB00B0A912 /* Info.plist */,
+			);
+			path = MyCheeseMiaowTests;
+			sourceTree = "<group>";
+		};
+		B2E5E7D21D6C32EB00B0A912 /* MyCheeseMiaowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5E7D31D6C32EB00B0A912 /* MyCheeseMiaowUITests.m */,
+				B2E5E7D51D6C32EB00B0A912 /* Info.plist */,
+			);
+			path = MyCheeseMiaowUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2E5E7AA1D6C32EB00B0A912 /* MyCheeseMiaow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2E5E7D81D6C32EB00B0A912 /* Build configuration list for PBXNativeTarget "MyCheeseMiaow" */;
+			buildPhases = (
+				B2E5E7A71D6C32EB00B0A912 /* Sources */,
+				B2E5E7A81D6C32EB00B0A912 /* Frameworks */,
+				B2E5E7A91D6C32EB00B0A912 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyCheeseMiaow;
+			productName = MyCheeseMiaow;
+			productReference = B2E5E7AB1D6C32EB00B0A912 /* MyCheeseMiaow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B2E5E7C31D6C32EB00B0A912 /* MyCheeseMiaowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2E5E7DB1D6C32EB00B0A912 /* Build configuration list for PBXNativeTarget "MyCheeseMiaowTests" */;
+			buildPhases = (
+				B2E5E7C01D6C32EB00B0A912 /* Sources */,
+				B2E5E7C11D6C32EB00B0A912 /* Frameworks */,
+				B2E5E7C21D6C32EB00B0A912 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2E5E7C61D6C32EB00B0A912 /* PBXTargetDependency */,
+			);
+			name = MyCheeseMiaowTests;
+			productName = MyCheeseMiaowTests;
+			productReference = B2E5E7C41D6C32EB00B0A912 /* MyCheeseMiaowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B2E5E7CE1D6C32EB00B0A912 /* MyCheeseMiaowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2E5E7DE1D6C32EB00B0A912 /* Build configuration list for PBXNativeTarget "MyCheeseMiaowUITests" */;
+			buildPhases = (
+				B2E5E7CB1D6C32EB00B0A912 /* Sources */,
+				B2E5E7CC1D6C32EB00B0A912 /* Frameworks */,
+				B2E5E7CD1D6C32EB00B0A912 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2E5E7D11D6C32EB00B0A912 /* PBXTargetDependency */,
+			);
+			name = MyCheeseMiaowUITests;
+			productName = MyCheeseMiaowUITests;
+			productReference = B2E5E7CF1D6C32EB00B0A912 /* MyCheeseMiaowUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2E5E7A31D6C32EB00B0A912 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Daniel Moskovich";
+				TargetAttributes = {
+					B2E5E7AA1D6C32EB00B0A912 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					B2E5E7C31D6C32EB00B0A912 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = B2E5E7AA1D6C32EB00B0A912;
+					};
+					B2E5E7CE1D6C32EB00B0A912 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = B2E5E7AA1D6C32EB00B0A912;
+					};
+				};
+			};
+			buildConfigurationList = B2E5E7A61D6C32EB00B0A912 /* Build configuration list for PBXProject "MyCheeseMiaow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B2E5E7A21D6C32EB00B0A912;
+			productRefGroup = B2E5E7AC1D6C32EB00B0A912 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2E5E7AA1D6C32EB00B0A912 /* MyCheeseMiaow */,
+				B2E5E7C31D6C32EB00B0A912 /* MyCheeseMiaowTests */,
+				B2E5E7CE1D6C32EB00B0A912 /* MyCheeseMiaowUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2E5E7A91D6C32EB00B0A912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E5E7BE1D6C32EB00B0A912 /* LaunchScreen.storyboard in Resources */,
+				B2E5E7BB1D6C32EB00B0A912 /* Assets.xcassets in Resources */,
+				B2E5E7B91D6C32EB00B0A912 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E5E7C21D6C32EB00B0A912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E5E7CD1D6C32EB00B0A912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2E5E7A71D6C32EB00B0A912 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E5E7B61D6C32EB00B0A912 /* ViewController.m in Sources */,
+				B2BA0AC91D75C3F1008C4904 /* SetCardGameViewController.m in Sources */,
+				B2BA0ACC1D75C79E008C4904 /* SetMatchingGame.m in Sources */,
+				B2E5E7EC1D6C5CB200B0A912 /* Deck.m in Sources */,
+				B2E5E7E91D6C5B2A00B0A912 /* PlayingCardDeck.m in Sources */,
+				B290F60D1D7C437900263C3C /* HistoryViewController.m in Sources */,
+				B2E5E7B31D6C32EB00B0A912 /* AppDelegate.m in Sources */,
+				B2464F941D6D76F000225518 /* CardMatchingGame.m in Sources */,
+				B26BE6F01D746DD200BF87DD /* SetCard.m in Sources */,
+				B26BE6ED1D746C8400BF87DD /* SetCardDeck.m in Sources */,
+				B2E5E7B01D6C32EB00B0A912 /* main.m in Sources */,
+				B2E5E7E61D6C4C2A00B0A912 /* PlayingCard.m in Sources */,
+				B2E5E7E31D6C4AE900B0A912 /* Card.m in Sources */,
+				B26BE6E71D74402800BF87DD /* PlayingCardGameViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E5E7C01D6C32EB00B0A912 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E5E7C91D6C32EB00B0A912 /* MyCheeseMiaowTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2E5E7CB1D6C32EB00B0A912 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E5E7D41D6C32EB00B0A912 /* MyCheeseMiaowUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2E5E7C61D6C32EB00B0A912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2E5E7AA1D6C32EB00B0A912 /* MyCheeseMiaow */;
+			targetProxy = B2E5E7C51D6C32EB00B0A912 /* PBXContainerItemProxy */;
+		};
+		B2E5E7D11D6C32EB00B0A912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2E5E7AA1D6C32EB00B0A912 /* MyCheeseMiaow */;
+			targetProxy = B2E5E7D01D6C32EB00B0A912 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B2E5E7B71D6C32EB00B0A912 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2E5E7B81D6C32EB00B0A912 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B2E5E7BC1D6C32EB00B0A912 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2E5E7BD1D6C32EB00B0A912 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B2E5E7D61D6C32EB00B0A912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B2E5E7D71D6C32EB00B0A912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2E5E7D91D6C32EB00B0A912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MyCheeseMiaow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lightricks.MyCheeseMiaow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B2E5E7DA1D6C32EB00B0A912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MyCheeseMiaow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lightricks.MyCheeseMiaow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B2E5E7DC1D6C32EB00B0A912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MyCheeseMiaowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lightricks.MyCheeseMiaowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyCheeseMiaow.app/MyCheeseMiaow";
+			};
+			name = Debug;
+		};
+		B2E5E7DD1D6C32EB00B0A912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MyCheeseMiaowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lightricks.MyCheeseMiaowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyCheeseMiaow.app/MyCheeseMiaow";
+			};
+			name = Release;
+		};
+		B2E5E7DF1D6C32EB00B0A912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MyCheeseMiaowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lightricks.MyCheeseMiaowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MyCheeseMiaow;
+			};
+			name = Debug;
+		};
+		B2E5E7E01D6C32EB00B0A912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MyCheeseMiaowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lightricks.MyCheeseMiaowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MyCheeseMiaow;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2E5E7A61D6C32EB00B0A912 /* Build configuration list for PBXProject "MyCheeseMiaow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E5E7D61D6C32EB00B0A912 /* Debug */,
+				B2E5E7D71D6C32EB00B0A912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2E5E7D81D6C32EB00B0A912 /* Build configuration list for PBXNativeTarget "MyCheeseMiaow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E5E7D91D6C32EB00B0A912 /* Debug */,
+				B2E5E7DA1D6C32EB00B0A912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2E5E7DB1D6C32EB00B0A912 /* Build configuration list for PBXNativeTarget "MyCheeseMiaowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E5E7DC1D6C32EB00B0A912 /* Debug */,
+				B2E5E7DD1D6C32EB00B0A912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2E5E7DE1D6C32EB00B0A912 /* Build configuration list for PBXNativeTarget "MyCheeseMiaowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E5E7DF1D6C32EB00B0A912 /* Debug */,
+				B2E5E7E01D6C32EB00B0A912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2E5E7A31D6C32EB00B0A912 /* Project object */;
+}
