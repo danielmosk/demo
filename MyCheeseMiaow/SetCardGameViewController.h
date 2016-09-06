@@ -13,7 +13,7 @@
 
 
 -(Deck *)createDeck;
-@property (nonatomic, readonly) NSMutableArray *cardHistoryStrings; //of arrays of SetCards
-
+@property (nonatomic, readonly) NSMutableArray *cardTripleHistory; //of NSAttributedString
+@property (nonatomic, readonly) NSMutableArray *scoreChangeHistory; //of NSNumber
 
 @end

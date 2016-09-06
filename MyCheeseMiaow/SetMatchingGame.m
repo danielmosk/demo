@@ -105,7 +105,6 @@ static const int MATCH_BONUS=10;
            }// end of for loop
         card.chosen = !card.isChosen;
         self.score += (self.scorechange - COST_TO_CHOOSE);
-        NSLog(@"Score: %i", (int)self.score);
 }
     
 - (BOOL) newTriple

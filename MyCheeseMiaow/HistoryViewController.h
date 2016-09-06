@@ -10,6 +10,7 @@
 
 @interface HistoryViewController : UIViewController
 
-@property (strong, nonatomic) NSArray *history;
+@property (strong, nonatomic) NSArray *cardHistory;
+@property (strong, nonatomic) NSArray *scoreHistory;
 
 @end

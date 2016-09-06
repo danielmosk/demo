@@ -50,7 +50,7 @@
 -(Deck *)createDeck { //abstract
     return nil;
 }
-
+	
 // Assignment 1 code:
 //- (void)setFlipCount:(int)flipCount
 // {
@@ -71,7 +71,11 @@
                               forState:UIControlStateNormal];
         cardButton.enabled = YES;
     }
-    [self.NMatchModeSwitch setOn:YES animated:YES];
+    if([self.NMatchModeSwitch isOn]){
+        self.game.mode=2;
+    } else{
+        self.game.mode=3;
+    }
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender
