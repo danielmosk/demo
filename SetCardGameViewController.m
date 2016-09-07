@@ -18,7 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic) int scoreCount;
 @property (strong, nonatomic) SetMatchingGame *game;
-@property (nonatomic, readwrite) NSMutableArray *cardHistoryStrings; //of arrays of SetCards
+@property (nonatomic, readwrite) NSMutableArray *cardTripleHistory; //of NSAttributedString
+@property (nonatomic, readwrite) NSMutableArray *scoreChangeHistory; //of NSNumber
 
 @end
 
@@ -29,7 +30,8 @@
     if ([segue.identifier isEqualToString:@"View History"] ){
         if ([segue.destinationViewController isKindOfClass:[HistoryViewController class]]){
             HistoryViewController *historyvc = (HistoryViewController *)segue.destinationViewController;
-            historyvc.history= self.cardHistoryStrings;
+            historyvc.cardHistory= self.cardTripleHistory;
+            historyvc.scoreHistory=self.scoreChangeHistory;
         }
     }
 }
@@ -61,10 +63,16 @@
     return [[SetCardDeck alloc] init];
 }
 
-- (NSMutableArray *)cardHistoryStrings
+- (NSMutableArray *)cardTripleHistory
 {
-    if (!_cardHistoryStrings) _cardHistoryStrings = [[NSMutableArray alloc] init];
-    return _cardHistoryStrings;
+    if (!_cardTripleHistory) _cardTripleHistory = [[NSMutableArray alloc] init];
+    return _cardTripleHistory;
+}
+
+- (NSMutableArray *)scoreChangeHistory
+{
+    if (!_scoreChangeHistory) _scoreChangeHistory = [[NSMutableArray alloc] init];
+    return _scoreChangeHistory;
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender
@@ -156,24 +164,36 @@
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", (int)self.game.score];
     if ([self.game.allCards count] ==3 ){
-        NSMutableAttributedString *textOnLabel= [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"A, B , and        C   "]];
-         [textOnLabel replaceCharactersInRange:NSMakeRange(0,1) withAttributedString:[self titleForCard:[self.game.allCards firstObject]]];
-        [textOnLabel replaceCharactersInRange:NSMakeRange(3,2) withAttributedString:[self titleForCard:self.game.allCards[1]]];
-        [textOnLabel replaceCharactersInRange:NSMakeRange(10,9) withAttributedString:[self titleForCard:[self.game.allCards lastObject]]];
-        NSAttributedString *matchStatus = [[NSAttributedString alloc] init];
+        
+        NSAttributedString *temp1 = [[NSAttributedString alloc] initWithString:@", "];
+        NSAttributedString *temp2 = [[NSAttributedString alloc] initWithString:@", and "];
+        NSAttributedString *temp3 = [[NSAttributedString alloc] init];
         if (self.game.scorechange>0)
         {
-          matchStatus =[[NSAttributedString alloc] initWithString: @"matched for"];
+            temp3 =[[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" matched for %i points!", (int)self.game.scorechange]];
         }
         else
         {
-           matchStatus =[[NSAttributedString alloc] initWithString: @"mismatched for"];
+            temp3 =[[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@" is a mismatch. Lose %i points.", (int)self.game.scorechange]];;
         }
-        [textOnLabel appendAttributedString:matchStatus];
-        NSAttributedString *scoreChange =[[NSAttributedString alloc] initWithString: [NSString stringWithFormat: @" %i points!", (int)self.game.scorechange]];
-        [textOnLabel appendAttributedString:scoreChange];
+        
+        NSMutableAttributedString *textOnLabel= [[NSMutableAttributedString alloc] init];
+        [textOnLabel appendAttributedString:[self titleForCard:self.game.allCards[0]]];
+        [textOnLabel appendAttributedString:temp1];
+        [textOnLabel appendAttributedString:[self titleForCard:self.game.allCards[1]]];
+        [textOnLabel appendAttributedString:temp2];
+        [textOnLabel appendAttributedString:[self titleForCard:self.game.allCards[2]]];
+        [textOnLabel appendAttributedString:temp3];
+        
         self.eventLabel.attributedText = textOnLabel;
-        [self.cardHistoryStrings addObject:textOnLabel];
+        
+        NSMutableArray *tripleOfCards = [[NSMutableArray alloc] initWithCapacity:3];
+        [tripleOfCards addObject:[self titleForCard:self.game.allCards[0]]];
+        [tripleOfCards addObject:[self titleForCard:self.game.allCards[1]]];
+        [tripleOfCards addObject:[self titleForCard:self.game.allCards[2]]];
+        [self.cardTripleHistory addObject:tripleOfCards];
+        [self.scoreChangeHistory addObject:[NSNumber numberWithInteger:(int)self.game.scorechange]];
+
     }
 }
 
