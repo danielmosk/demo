@@ -8,21 +8,32 @@
 
 #import "Card.h"
 
-@interface Card()
-
-@end
 
 @implementation Card
 
-- (int)match:(NSArray *)otherCards
-{
-    return 1;
+
+- (BOOL)isEqual:(id)other {
+  if (other == self)
+    return YES;
+  if (!other || ![other isKindOfClass: [self class]])
+    return NO;
+  if (! [self.contents isEqualToString: ((Card *) other).contents])
+    return NO;
+  return YES;
 }
 
--(NSUInteger) cardsInPlay {
-    if (!_cardsInPlay)
-        _cardsInPlay=2;
-    return _cardsInPlay;
+
+- (void)hideCard {
+  self.hidden = YES;
+}
+
+//virtual
+- (NSUInteger)numberOfCards {
+  return 0;
+}
+
+- (NSUInteger)integerContents {
+  return 0;
 }
 
 @end

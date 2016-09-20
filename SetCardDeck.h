@@ -1,13 +1,15 @@
 //
-//  PlayingCardGameViewController.h
+//  SetCardDeck.h
 //  MyCheeseMiaow
 //
 //  Created by Daniel Moskovich on 2016/08/29.
 //  Copyright © 2016年 Daniel Moskovich. All rights reserved.
 //
 
-#import "CardGameViewController.h"
+#import "Deck.h"
 
-@interface PlayingCardGameViewController : CardGameViewController
+#import "SetCard.h"
+
+@interface SetCardDeck : Deck
 
 @end
