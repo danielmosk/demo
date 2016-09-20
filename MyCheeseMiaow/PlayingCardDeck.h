@@ -6,8 +6,10 @@
 //  Copyright © 2016 Daniel Moskovich. All rights reserved.
 //
 
-//#import <UIKit/UIKit.h>
+
 #import "Deck.h"
+
+#import "PlayingCard.h"
 
 @interface PlayingCardDeck : Deck
 

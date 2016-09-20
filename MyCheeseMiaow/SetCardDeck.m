@@ -7,27 +7,22 @@
 //
 
 #import "SetCardDeck.h"
-#import "SetCard.h"
+
 
 @implementation SetCardDeck
 
-- (instancetype)init
-{
-    self = [super init];
-    
-    if (self)
-    {
-            for (NSUInteger rank =1; rank <= [SetCard maxRank]; rank++)
-            {
-                SetCard *card = [[SetCard alloc] init];
-                card.number=rank;
-                card.colour=rank;
-                card.shading=rank;
-                card.suit = rank;
-                [self addCard:card];
-            }
-        }
-    return self;
+- (instancetype)init {
+  if (self = [super init]) {
+    for (NSUInteger rank = 0; rank < [SetCard maxRank]; rank++) {
+      SetCard *card = [[SetCard alloc] init];
+      card.number = rank;
+      card.colour = rank;
+      card.shading = rank;
+      card.suit = rank;
+      [self addCard: card];
+    }
+  }
+  return self;
 }
 
 @end

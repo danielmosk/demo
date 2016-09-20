@@ -11,11 +11,10 @@
 
 @interface Deck : NSObject
 
-@property (nonatomic, getter=isEmpty) BOOL empty;
-
-- (void)addCard:(Card *)card atTop:(BOOL)atTop;
-- (void)addCard:(Card *)card;
-
+- (void)addCard: (Card *)card atTop: (BOOL)atTop;
+- (void)addCard: (Card *)card;
 - (Card *)drawRandomCard;
+
+@property (nonatomic, getter = isEmpty) BOOL empty;
 
 @end

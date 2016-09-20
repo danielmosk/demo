@@ -7,7 +7,12 @@
 //
 
 #import "PlayingCardGameViewController.h"
+
+#import "CardMatchingGameProvider.h"
 #import "PlayingCardDeck.h"
+#import "PlayingCardMatchingGame.h"
+#import "PlayingCardView.h"
+
 
 @interface PlayingCardGameViewController ()
 
@@ -15,9 +20,54 @@
 
 @implementation PlayingCardGameViewController
 
+@synthesize game = _game;
 
--(Deck *) createDeck {
-    return [[PlayingCardDeck alloc] init];
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [self.view setAutoresizingMask: UIViewAutoresizingFlexibleWidth
+   | UIViewAutoresizingFlexibleHeight];
+  self.maxCardSize = CGSizeMake(80.0, 120.0);
+}
+
+- (Deck *)createDeck {
+  return [[PlayingCardDeck alloc] init];
+}
+
+- (NSString *)cardDeckIcon {
+  return @"carddeck";
+}
+
+#define INITIAL_NUMBER_OF_CARDS 20
+
+- (CardMatchingGame *)game {
+  if (!_game)
+  {
+    CardMatchingGameProvider *gameParameters = [[CardMatchingGameProvider alloc]
+                                                initWithDeck: [self createDeck]
+                                                andInitialNumOfCards: INITIAL_NUMBER_OF_CARDS
+                                                andNumberOfCardsInMatchedSet: 2
+                                                andRemoveWhenMatched: YES];
+    _game = [[PlayingCardMatchingGame alloc] initWithProvider: gameParameters];
+  }
+  return _game;
+}
+
+- (PlayingCardView *)createViewForCard: (Card *)card {
+  PlayingCardView *view = [[PlayingCardView alloc] init];
+  [self updateView: view forCard: card];
+  return view;
+}
+
+- (void) updateView: (UIView *)view forCard: (Card *)card {
+  if (![card isKindOfClass: [PlayingCard class]]) return;
+  if (![view isKindOfClass: [PlayingCardView class]]) return;
+  ((PlayingCardView *)view).rank = ((PlayingCard *)card).rank;
+  ((PlayingCardView *)view).suit = ((PlayingCard *)card).suit;
+  [view setBackgroundColor: [UIColor clearColor]];
+  if (((PlayingCardView *)view).faceUp != ((PlayingCard *)card).chosen) {
+    [super animateCardFlip:view];
+    ((PlayingCardView *)view).faceUp = ((PlayingCard *)card).chosen;
+  }
 }
 
 @end

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Daniel Moskovich. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CardGameViewController.h"
 
-@interface PlayingCardGameViewController : ViewController
+@interface PlayingCardGameViewController : CardGameViewController
 
 @end

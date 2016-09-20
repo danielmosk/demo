@@ -10,12 +10,13 @@
 
 @interface SetCard : Card
 
-@property (nonatomic) NSUInteger suit;
-@property (nonatomic) NSUInteger number;
-@property (nonatomic) NSUInteger colour;
-@property (nonatomic) NSUInteger shading;
 
-
+/// For set cards, this is the total number of cards, i.e. 81.
 + (NSUInteger) maxRank;
+
+@property (nonatomic) NSUInteger colour;
+@property (nonatomic) NSUInteger number;
+@property (nonatomic) NSUInteger shading;
+@property (nonatomic) NSUInteger suit;
 
 @end

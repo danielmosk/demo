@@ -19,9 +19,9 @@
 
 @implementation HistoryViewController
 
-- (void) setCardHistory:(NSArray *)cardHistory
+- (void) setCardHistory:(NSArray *)matchHistory
 {
-    _cardHistory = cardHistory;
+    _cardHistory = matchHistory;
     if (self.view.window) [self updateUI];
 }
 
@@ -42,7 +42,7 @@
 
 - (void) updateUI {
     NSMutableAttributedString *textOnLabel= [[NSMutableAttributedString alloc] init];
-    int historyLength= (int)[self.cardHistory count];
+    int historyLength= (int)[self.matchHistory count];
     NSLog(@"HistoryLength: %i", historyLength);
     
     NSMutableAttributedString *temp1 = [[NSMutableAttributedString alloc] initWithString:@", " attributes:@{NSForegroundColorAttributeName: [UIColor grayColor]}];
@@ -52,11 +52,11 @@
         int i=0;
         while (i+1<historyLength)
         {
-            [textOnLabel appendAttributedString:self.cardHistory[i][0]];
+            [textOnLabel appendAttributedString:self.matchHistory[i][0]];
             [textOnLabel appendAttributedString:temp1];
-            [textOnLabel appendAttributedString:self.cardHistory[i][1]];
+            [textOnLabel appendAttributedString:self.matchHistory[i][1]];
             [textOnLabel appendAttributedString:temp2];
-            [textOnLabel appendAttributedString:self.cardHistory[i][2]];
+            [textOnLabel appendAttributedString:self.matchHistory[i][2]];
             
             if ([self.scoreHistory[i] integerValue]>0)
             {
@@ -74,11 +74,11 @@
         [temp1 removeAttribute:NSForegroundColorAttributeName range:NSMakeRange(0,temp1.length)];
         [temp2 addAttributes: @{NSForegroundColorAttributeName: [UIColor blackColor]} range:NSMakeRange(0,temp2.length)];
         
-        [textOnLabel appendAttributedString:self.cardHistory[historyLength-1][0]];
+        [textOnLabel appendAttributedString:self.matchHistory[historyLength-1][0]];
         [textOnLabel appendAttributedString:temp1];
-        [textOnLabel appendAttributedString:self.cardHistory[historyLength-1][1]];
+        [textOnLabel appendAttributedString:self.matchHistory[historyLength-1][1]];
         [textOnLabel appendAttributedString:temp2];
-        [textOnLabel appendAttributedString:self.cardHistory[historyLength-1][2]];
+        [textOnLabel appendAttributedString:self.matchHistory[historyLength-1][2]];
         
         if ([self.scoreHistory[historyLength-1] integerValue]>0)
         {
@@ -97,3 +97,16 @@
 
 
 @end
+
+/*
+ TO ATTACH TEXT AS STRING
+ 
+ NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"like after"];
+ 
+ NSTextAttachment *textAttachment = [[NSTextAttachment alloc] init];
+ textAttachment.image = [UIImage imageNamed:@"whatever.png"];
+ 
+ NSAttributedString *attrStringWithImage = [NSAttributedString attributedStringWithAttachment:textAttachment];
+ 
+ [attributedString replaceCharactersInRange:NSMakeRange(4, 1) withAttributedString:attrStringWithImage];
+*/
