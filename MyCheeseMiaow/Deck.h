@@ -13,8 +13,8 @@
 
 - (void)addCard: (Card *)card atTop: (BOOL)atTop;
 - (void)addCard: (Card *)card;
+- (NSUInteger)count;
 - (Card *)drawRandomCard;
 
-@property (nonatomic, getter = isEmpty) BOOL empty;
 
 @end

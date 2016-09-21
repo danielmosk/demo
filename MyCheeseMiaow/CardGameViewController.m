@@ -137,7 +137,7 @@
         snap.damping = 2.5;
         [self.stackCardsAnimator addBehavior: snap];
         [self delayCallback:^{self.panRecogniser.enabled = YES;}
-            forTotalSeconds: 1.3 * kANIMATION_DURATION];
+            forTotalSeconds: 1.1 * kANIMATION_DURATION];
       }
     }
   }
@@ -152,6 +152,7 @@
         UIAttachmentBehavior *attachment = [[UIAttachmentBehavior alloc]
                                             initWithItem: cardView
                                             attachedToAnchor: center];
+        attachment.frictionTorque = 100;
         [self.stackCardsAnimator addBehavior: attachment];
         UIDynamicItemBehavior *doNotRotate = [[UIDynamicItemBehavior alloc] init];
         doNotRotate.allowsRotation = NO;
@@ -184,7 +185,7 @@
   for (int i = 0; i < 3; i++) {
     [self.game drawCard];
   }
-  if (self.game.gameParameters.deck.isEmpty) {
+  if (self.game.gameParameters.deck.count == 0) {
     [self.addCardsButton setBackgroundImage: nil forState: UIControlStateNormal];
     [self.addCardsButton setTitle: @"EMPTY" forState: UIControlStateNormal];
     self.addCardsButton.enabled = NO;
@@ -274,7 +275,7 @@
 
 - (void)reframeCards {
   self.grid.minimumNumberOfCells = [self.game.cards count];
-  NSUInteger animationCounter = 0;
+  NSUInteger 	animationCounter = 0;
   for (Card* card in self.game.cards) {
     if (!card.hidden) {
       NSUInteger viewLocation = [self.cardForCardViewArray locationForCard: card];
@@ -371,11 +372,19 @@
 
 - (void)viewWillTransitionToSize: (CGSize)size
        withTransitionCoordinator: (id<UIViewControllerTransitionCoordinator>)coordinator {
+  if (self.gridView.bounds.size.height == 0){
+    return;
+  }
   [coordinator
    animateAlongsideTransitionInView: self.gridView
    animation: ^(id<UIViewControllerTransitionCoordinatorContext> context)
    {
      self.grid.size = self.gridView.bounds.size;
+     BOOL gridIsOK = [self.grid inputsAreValid];
+     if (!gridIsOK){
+       NSLog(@"is going to crAsh");
+     }
+     
      self.stackCardsAnimator = nil;
      [self updateUI];
    } completion: nil

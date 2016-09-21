@@ -46,12 +46,8 @@
   return randomCard;
 }
 
-- (BOOL)isEmpty {
-  BOOL emptyness = YES;
-  if ([self.cards count]) {
-    emptyness = NO;
-  }
-  return emptyness;
+- (NSUInteger)count {
+  return [self.cards count];
 }
 
 @end
