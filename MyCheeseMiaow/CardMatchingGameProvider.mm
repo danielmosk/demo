@@ -12,11 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (instancetype)initWithDeck: (Deck *)deck andInitialNumOfCards: (NSUInteger)initialNumberOfCards
+               andMatchBonus: (NSUInteger)matchBonus
+                 andStrategy: (id<MatchingStrategy>)matchingStrategy
+          andMismatchPenalty: (NSUInteger)mismatchPenalty
 andNumberOfCardsInMatchedSet: (NSUInteger)numberOfCardsInMatchedSet
         andRemoveWhenMatched: (BOOL)removeWhenMatched {
   if (self = [super init]) {
     _deck = deck;
     _initialNumberOfCards = initialNumberOfCards;
+    _matchBonus = matchBonus;
+    _matchingStrategy = matchingStrategy;
+    _mismatchPenalty = mismatchPenalty;
     _numberOfCardsInMatchedSet = numberOfCardsInMatchedSet;
     _removeWhenMatched = removeWhenMatched;
   }

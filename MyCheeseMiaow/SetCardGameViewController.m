@@ -9,7 +9,8 @@
 #import "SetCardGameViewController.h"
 
 #import "SetCardDeck.h"
-#import "SetCardMatchingGame.h"
+#import "CardMatchingGame.h"
+#import "SetCardMatchingStrategy.h"
 #import "SetCardView.h"
 
 
@@ -28,6 +29,10 @@
   return [[SetCardDeck alloc] init];
 }
 
+- (SetCardMatchingStrategy *)createStrategy {
+  return [[SetCardMatchingStrategy alloc] init];
+}
+
 - (NSString *)cardDeckIcon {
   return @"setcarddeck";
 }
@@ -41,9 +46,12 @@
     CardMatchingGameProvider *gameParameters = [[CardMatchingGameProvider alloc]
                                                 initWithDeck: [self createDeck]
                                                 andInitialNumOfCards: INITIAL_NUMBER_OF_CARDS
+                                                andMatchBonus: 10
+                                                andStrategy: [self createStrategy]
+                                                andMismatchPenalty: 3
                                                 andNumberOfCardsInMatchedSet: 3
                                                 andRemoveWhenMatched: NO];
-    _game = [[SetCardMatchingGame alloc] initWithProvider: gameParameters];
+    _game = [[CardMatchingGame alloc] initWithProvider: gameParameters];
   }
   return _game;
 }

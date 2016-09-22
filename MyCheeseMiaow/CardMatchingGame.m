@@ -102,6 +102,14 @@
   }
 }
 
+- (NSInteger)applyBonusses: (NSInteger)matchScore {
+  if (matchScore > 0) {
+    return (matchScore * self.gameParameters.matchBonus);
+  } else {
+    return (-self.gameParameters.mismatchPenalty);
+  }
+}
+
 #define kCOST_TO_CHOOSE 1
 
 - (void)chooseCard: (Card *)card
@@ -123,7 +131,8 @@
             self.allCards = [potentiallyMatchingCards arrayByAddingObject: card];
             if (![self newMatch: self.matchHistory]) {
               break; }
-            matchScore = [self matchScore: self.allCards];
+            matchScore = [self.gameParameters.matchingStrategy
+                          homogeneityMeasure: self.allCards];
             self.scorechange = [self applyBonusses: matchScore];
             if (matchScore) {
               [self.matchHistory addObject: self.allCards];
@@ -166,14 +175,7 @@
   return value;
 }
 
-// Implemented in child classes
-- (NSInteger)matchScore: (NSArray *)allCards {
-  return 0;
-}
 
-- (NSInteger)applyBonusses: (NSInteger)matchScore {
-  return 0;
-}
 
 
 

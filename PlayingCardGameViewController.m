@@ -10,7 +10,8 @@
 
 #import "CardMatchingGameProvider.h"
 #import "PlayingCardDeck.h"
-#import "PlayingCardMatchingGame.h"
+#import "CardMatchingGame.h"
+#import "PlayingCardMatchingStrategy.h"
 #import "PlayingCardView.h"
 
 
@@ -33,6 +34,10 @@
   return [[PlayingCardDeck alloc] init];
 }
 
+- (PlayingCardMatchingStrategy *)createStrategy {
+  return [[PlayingCardMatchingStrategy alloc] init];
+}
+
 - (NSString *)cardDeckIcon {
   return @"carddeck";
 }
@@ -40,14 +45,16 @@
 #define INITIAL_NUMBER_OF_CARDS 20
 
 - (CardMatchingGame *)game {
-  if (!_game)
-  {
+  if (!_game) {
     CardMatchingGameProvider *gameParameters = [[CardMatchingGameProvider alloc]
                                                 initWithDeck: [self createDeck]
                                                 andInitialNumOfCards: INITIAL_NUMBER_OF_CARDS
+                                                andMatchBonus: 4
+                                                andStrategy: [self createStrategy]
+                                                andMismatchPenalty: 2
                                                 andNumberOfCardsInMatchedSet: 2
                                                 andRemoveWhenMatched: YES];
-    _game = [[PlayingCardMatchingGame alloc] initWithProvider: gameParameters];
+    _game = [[CardMatchingGame alloc] initWithProvider: gameParameters];
   }
   return _game;
 }

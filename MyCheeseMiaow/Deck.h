@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "Card.h"
 
-@interface Deck : NSObject
+@interface Deck : NSObject {@protected NSMutableArray *cards;}
 
 - (void)addCard: (Card *)card atTop: (BOOL)atTop;
 - (void)addCard: (Card *)card;
 - (NSUInteger)count;
 - (Card *)drawRandomCard;
+
+@property (strong, nonatomic) NSMutableArray *cards; 
 
 
 @end

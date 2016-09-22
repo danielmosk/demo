@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Container class for CardViewInGrid objects, with methods to access individual data fields.
 
-@interface arrayOfCardViewInGrid :  NSMutableArray { NSMutableArray *_backendArray; }
+@interface arrayOfCardViewInGrid :  NSObject
 
 /// Finds the card displays in a given view.
 - (Card*) cardForView: (UIView *)view;
@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) removeEntry: (Card *)card;
 /// Finds the view displaying a given card.
 - (UIView *) viewForCard: (Card *)card;
+
+@property (strong, nonatomic) NSMutableArray<CardViewInGrid *> *arrayOfCardViewInGrid;
 
 @end
 

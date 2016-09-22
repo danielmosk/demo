@@ -8,6 +8,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation arrayOfCardViewInGrid
 
+- (NSMutableArray<CardViewInGrid *> *)arrayOfCardViewInGrid {
+  if (!_arrayOfCardViewInGrid) {
+    _arrayOfCardViewInGrid = [[NSMutableArray alloc] init];
+  }
+  return _arrayOfCardViewInGrid;
+}
 
 - (BOOL)doesThisArray: (NSArray *)array containTheCard: (Card *)card {
   for (id item in array) {
@@ -22,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (Card *)cardForView: (UIView *)view {
-  for (id item in self) {
+  for (id item in self.arrayOfCardViewInGrid) {
     if ([item isKindOfClass: [CardViewInGrid class]]) {
       if ([view isEqual: ((CardViewInGrid *)item).view])
         return ((CardViewInGrid *)item).cardForView;
@@ -33,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (UIView *)viewForCard: (Card *)card {
-  for (id item in self) {
+  for (id item in self.arrayOfCardViewInGrid) {
     if ([item isKindOfClass: [CardViewInGrid class]]) {
       if ([card isEqual: ((CardViewInGrid *)item).cardForView])
         return ((CardViewInGrid *)item).view;
@@ -43,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSUInteger)locationForCard: (Card *)card {
-  for (id item in self) {
+  for (id item in self.arrayOfCardViewInGrid) {
     if ([item isKindOfClass: [CardViewInGrid class]]) {
       if ([card isEqual: ((CardViewInGrid *)item).cardForView])
         return ((CardViewInGrid *)item).gridLocation;
@@ -54,60 +60,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (void)removeEntry: (Card *)card {
-  for (CardViewInGrid* item in self) {
+  for (CardViewInGrid* item in self.arrayOfCardViewInGrid) {
     if ([item isKindOfClass: [CardViewInGrid class]]) {
       if ([card isEqual: ((CardViewInGrid *)item).cardForView]) {
-        [self removeObject: item];
+        [self.arrayOfCardViewInGrid
+         removeObjectAtIndex: [self.arrayOfCardViewInGrid indexOfObject: item]];
         break;
       }
     }
   }
 }
 
--(instancetype)init {
-  if (self = [super init]) {
-    _backendArray = [@[] mutableCopy];
-  }
-  return self;
-}
-
-// Super's Required Methods
-
--(void)addObject:(id)anObject {
-  [_backendArray addObject: anObject];
-}
-
--(void)insertObject: (id)anObject atIndex: (NSUInteger)index {
-  [_backendArray insertObject: anObject atIndex: index];
-}
-
--(void)replaceObjectAtIndex: (NSUInteger)index withObject: (id)anObject {
-  [_backendArray replaceObjectAtIndex: index withObject: anObject];
-}
-
--(id)objectAtIndex: (NSUInteger)index {
-  return [_backendArray objectAtIndex: index];
-}
-
--(NSUInteger)count {
-  return _backendArray.count;
-}
-
--(void)removeObject: (id)anObject {
-  [_backendArray removeObject: anObject];
-}
-
--(void)removeLastObject {
-  [_backendArray removeLastObject];
-}
-
--(void)removeAllObjects {
-  [_backendArray removeAllObjects];
-}
-
--(void)removeObjectAtIndex:(NSUInteger)index {
-  [_backendArray removeObjectAtIndex:  index];
-}
 
 
 @end

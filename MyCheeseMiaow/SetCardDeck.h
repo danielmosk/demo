@@ -8,8 +8,10 @@
 
 #import "Deck.h"
 
+#import "MatchingStrategy.h"
 #import "SetCard.h"
 
 @interface SetCardDeck : Deck
+
 
 @end

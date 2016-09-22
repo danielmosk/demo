@@ -11,6 +11,7 @@
 
 #import "CardMatchingGameProvider.h"
 #import "Deck.h"
+#import "MatchingStrategy.h"
 
 /// Parent model for card matching games.
 
@@ -39,13 +40,14 @@ NS_DESIGNATED_INITIALIZER;
 @property (nonatomic, strong) NSArray *allCards;
 /// All cards currently in play.
 @property (nonatomic, strong) NSMutableArray *cards;
+/// The parameters that characterize the game.
+@property (nonatomic, strong) CardMatchingGameProvider *gameParameters;
 /// The history of successful matches so far.
 @property (nonatomic, readonly) NSMutableArray *matchHistory;
 /// The game score.
 @property (nonatomic, readonly) NSInteger score;
 /// The change in the game score on this turn.
 @property (nonatomic, readonly) NSInteger scorechange;
-/// The parameters that characterize the game.
-@property (nonatomic, strong) CardMatchingGameProvider *gameParameters;
+
 
 @end

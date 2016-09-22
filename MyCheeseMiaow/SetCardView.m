@@ -7,7 +7,7 @@
 //
 
 #import "SetCardView.h"
-#import "SetCardMatchingGame.h"
+#import "CardMatchingGame.h"
 #import "HistoryViewController.h"
 
 
@@ -25,6 +25,7 @@
 }
 
 - (void) awakeFromNib {
+  [super awakeFromNib];
   [self setup];
 }
 

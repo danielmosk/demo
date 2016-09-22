@@ -36,6 +36,7 @@
 
 @synthesize cardViews = _cardViews;
 
+
 #pragma mark - Pure virtual functions
 #pragma mark-
 
@@ -152,7 +153,7 @@
         UIAttachmentBehavior *attachment = [[UIAttachmentBehavior alloc]
                                             initWithItem: cardView
                                             attachedToAnchor: center];
-        attachment.frictionTorque = 100;
+        attachment.frictionTorque = INT_MAX;
         [self.stackCardsAnimator addBehavior: attachment];
         UIDynamicItemBehavior *doNotRotate = [[UIDynamicItemBehavior alloc] init];
         doNotRotate.allowsRotation = NO;
@@ -174,8 +175,7 @@
     else if (gesture.state == UIGestureRecognizerStateEnded) {
       self.panRecogniser.enabled = NO;
       self.stackCardsAnimator = nil;
-      [self updateUI];
-      
+            [self updateUI];
     }
   }
 }
@@ -220,7 +220,7 @@
 
 - (NSUInteger)firstEmptyLocation: (NSArray *)array {
   NSMutableArray *arrayOfLocations = [[NSMutableArray alloc] init];
-  for (id item in self.cardForCardViewArray) {
+  for (id item in self.cardForCardViewArray.arrayOfCardViewInGrid) {
     if ([item isKindOfClass: [CardViewInGrid class]]) {
       [arrayOfLocations addObject: @(((CardViewInGrid *) item).gridLocation)];
     }
@@ -267,11 +267,13 @@
     [self.gridView addSubview: cardView];
     CardViewInGrid* newViewInGrid = [[CardViewInGrid alloc] init];
     newViewInGrid.cardForView = card;
-    newViewInGrid.gridLocation =  [self firstEmptyLocation: self.cardForCardViewArray];
+    newViewInGrid.gridLocation =
+      [self firstEmptyLocation: self.cardForCardViewArray.arrayOfCardViewInGrid];
     newViewInGrid.view= cardView;
-    [self.cardForCardViewArray addObject: newViewInGrid];
+    [self.cardForCardViewArray.arrayOfCardViewInGrid addObject: newViewInGrid];
   }
 }
+
 
 - (void)reframeCards {
   self.grid.minimumNumberOfCells = [self.game.cards count];
@@ -346,7 +348,7 @@
       if (card.matched && self.game.gameParameters.removeWhenMatched) {
         [cardsToRemove addObject: card];
       }
-      if (![self.cardForCardViewArray doesThisArray: self.cardForCardViewArray
+      if (![self.cardForCardViewArray doesThisArray: self.cardForCardViewArray.arrayOfCardViewInGrid
                                      containTheCard: card]) {
         [cardsToAdd addObject: card];
       }
@@ -362,7 +364,6 @@
   [self reframeCards];
   self.scoreLabel.text = [NSString stringWithFormat: @"Score: %ld", self.game.score];
   [self updateEventLabel];
-  
 }
 
 
@@ -372,7 +373,7 @@
 
 - (void)viewWillTransitionToSize: (CGSize)size
        withTransitionCoordinator: (id<UIViewControllerTransitionCoordinator>)coordinator {
-  if (self.gridView.bounds.size.height == 0){
+  if (!self.gridView) {
     return;
   }
   [coordinator
@@ -380,12 +381,7 @@
    animation: ^(id<UIViewControllerTransitionCoordinatorContext> context)
    {
      self.grid.size = self.gridView.bounds.size;
-     BOOL gridIsOK = [self.grid inputsAreValid];
-     if (!gridIsOK){
-       NSLog(@"is going to crAsh");
-     }
-     
-     self.stackCardsAnimator = nil;
+    self.stackCardsAnimator = nil;
      [self updateUI];
    } completion: nil
    ];
@@ -403,7 +399,9 @@
                                                       self.grid.cellSize.width,
                                                       self.grid.cellSize.height);
                                          }
-                                         completion: nil];} forTotalSeconds: kANIMATION_DURATION];
+                                         completion: ^(BOOL finished){
+                                           [view removeFromSuperview];}];}
+      forTotalSeconds: kANIMATION_DURATION];
 }
 
 - (void)animateCardFlip: (UIView *)view {
@@ -433,7 +431,8 @@
                    }
                    completion:^(BOOL finished){[self
                                                 delayCallback:^{self.redealButton.enabled = YES;}
-                                                forTotalSeconds: kANIMATION_DURATION];}];
+                                                forTotalSeconds: kANIMATION_DURATION];
+                     [view removeFromSuperview];}];
 }
 
 - (void)delayCallback: (void(^)(void))callback forTotalSeconds: (double)delayInSeconds {
